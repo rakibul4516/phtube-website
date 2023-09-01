@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/Fevicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>PH Tube</title>
+</head>
+<body>
+    <header class="w-11/12 mx-auto py-10 border-b">
+        <nav class="flex items-center justify-between flex-wrap">
+            <img src="./images/Logo.png" alt="logo">
+            <button id="sort-btn" type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700">Sort by view</button>
+            <button id="blog-btn" type="button" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 0">BLOG</button>
+
+        </nav>
+    </header>
+    <main>
+        <section id="category-button-section" class="flex justify-center my-5">
+
+        </section>
+        <section id="post-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-5 w-11/12 mx-auto">
+
+        </section>
+        <section id="empty-data" class="hidden lg:w-6/12 w-10/12 mx-auto items-center mt-20">
+            <div class="text-center">
+                <img class="mx-auto" src="./images/Icon.png" alt="">
+                <h2 class="text-5xl">Oops!! Sorry, There is no content here</h2>
+            </div>
+        </section>
+    </main>
+    <script src="./js/script.js"></script>
+</body>
+</html>
