@@ -16,12 +16,10 @@ const displayCategory = (categories) => {
         <button id="" onclick="getPostData('${category.category_id}')" type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700">${category.category}</button>
 
         `
+        //append child to parent
         categorySection.appendChild(createDiv)
     });
 }
-
-// document.getElementById('sort-btn').addEventListener('click',displaySortdata(posts))
-
 
 //Get Post data from API
 const getPostData = async (categoryId = '1000') =>{
@@ -38,6 +36,7 @@ const getPostData = async (categoryId = '1000') =>{
 //Display Post data
 const displayPostData = (posts) => {
     const postSection = document.getElementById('post-section')
+    //condition for empty data
     const emptyData = document.getElementById('empty-data');
     if(posts < 1){
         emptyData.classList.remove('hidden')
@@ -45,8 +44,6 @@ const displayPostData = (posts) => {
         emptyData.classList.add('hidden')
     }
     postSection.textContent = "";
-    // displaySortdata(posts)
-
 
     //Get data one by one 
     posts.forEach(post => {
@@ -80,7 +77,8 @@ const displayPostData = (posts) => {
             </div>
         </div>
         `
-        postSection.appendChild(createPostDiv)
+        //append child in parent 
+        postSection.appendChild(createPostDiv);
     });
 }
 
@@ -89,7 +87,7 @@ const formatTime = (seconds) => {
     const hours = Math.floor(seconds / 3600);
     const remainingSeconds = seconds % 3600;
     const minutes = Math.floor(remainingSeconds / 60);
-    //condition implement for undefined time
+    //condition for undefined time
     if (hours === 0 && minutes === 0) {
       return '';
     } else {
@@ -109,7 +107,7 @@ const displaySortdata =(datas, shouldSort = false)=>{
    displayPostData(datas)
 }
 
-
+//funtion for convert string views to number
 function convertStringToNumber(viewsString) {
     const multiplier = viewsString.endsWith('K') ? 1000 : 1;
     return parseFloat(viewsString) * multiplier;
@@ -120,6 +118,7 @@ function convertStringToNumber(viewsString) {
 document.getElementById('blog-btn').addEventListener('click',() =>{
     window.location.href = 'blog.html';
 })
+//call the funtions
 getPostData()
 getCategories()
 
